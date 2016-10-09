@@ -1,0 +1,15 @@
+language: node_js
+
+node_js:
+  - '4.4.2'
+
+before_install:
+  - 'cd PROTOTYPE/electron'
+
+script:
+  - 'npm install'
+  - 'npm run build'
+
+cache:
+  directories:
+    - node_modules
