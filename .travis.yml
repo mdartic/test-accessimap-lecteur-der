@@ -5,11 +5,17 @@ node_js:
   - '4.4.2'
 
 before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install wine
   - 'cd PROTOTYPE/electron'
 
 script:
   - 'npm install'
   - 'npm run build'
+
+after_script:
+  - 'cd PROTOTYPE/electron'
+  - 'tar build-win32-x64 build-win32-x64.tar'
 
 cache:
   directories:
@@ -18,7 +24,10 @@ cache:
 deploy:
   provider: releases
   api_key: "$GITHUB_API_KEY"
-  file: "./PROTOTYPE/electron/build-win32-x64/LICENSE"
+  file: 
+    - "./PROTOTYPE/electron/build-win32-x64.tar"
+    - "PROTOTYPE/electron/build-win32-x64.tar"
+    - "build-win32-x64.tar"
   skip_cleanup: true
   on:
     tags: true
