@@ -10,7 +10,6 @@
   "author": "Alexandra JANIN",
   "license": "MIT",
   "devDependencies": {
-    "electron-packager": "^8.1.0",
     "electron-prebuilt": "^0.37.8"
   },
   "dependencies": {
