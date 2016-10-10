@@ -21,9 +21,11 @@ before_install:
 script:
   - 'npm install'
   - 'npm run build'
+  - 'npm run build2'
 
 after_script:
-  - 'cd PROTOTYPE/electron'
+  - 'pwd'
+  - 'ls'
   - 'tar build-win32-x64 build-win32-x64.tar'
 
 cache:
