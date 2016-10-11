@@ -6,6 +6,8 @@ node_js:
   - '4.4.2'
 
 before_install:
+  - echo $TRAVIS_BUILD_DIR
+  - pwd
   - sudo dpkg --add-architecture i386
   - sudo add-apt-repository ppa:ubuntu-wine/ppa -y
   - sudo apt-get update
