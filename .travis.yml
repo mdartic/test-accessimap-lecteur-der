@@ -27,6 +27,7 @@ after_script:
   - 'pwd'
   - 'ls'
   - 'tar build-win32-x64 build-win32-x64.tar'
+  - 'tar dist dist.tar'
 
 cache:
   directories:
@@ -34,11 +35,14 @@ cache:
 
 deploy:
   provider: releases
-  api_key: "$GITHUB_API_KEY"
+  api_key: "$GITHUB_API_TOKEN"
   file: 
     - "./PROTOTYPE/electron/build-win32-x64.tar"
     - "PROTOTYPE/electron/build-win32-x64.tar"
     - "build-win32-x64.tar"
+    - "./PROTOTYPE/electron/dist.tar"
+    - "PROTOTYPE/electron/dist.tar"
+    - "dist.tar"
   skip_cleanup: true
   on:
     tags: true
