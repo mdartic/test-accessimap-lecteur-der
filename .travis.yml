@@ -35,11 +35,9 @@ deploy:
   provider: releases
   api_key: "$GITHUB_API_TOKEN"
   file: 
-    - "./PROTOTYPE/electron/build-win32-x64.zip"
     - "PROTOTYPE/electron/build-win32-x64.zip"
-    - "build-win32-x64.zip"
-    - "./PROTOTYPE/electron/dist/accessimap-lecteur-der-0.0.1-win.zip"
-    - "./PROTOTYPE/electron/dist/accessimap-lecteur-der-0.0.1-x86_64.AppImage"
+    - "PROTOTYPE/electron/dist/accessimap-lecteur-der-0.0.1-win.zip"
+    - "PROTOTYPE/electron/dist/accessimap-lecteur-der-0.0.1-x86_64.AppImage"
   skip_cleanup: true
   on:
     all_branches: true
